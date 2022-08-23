@@ -49,12 +49,12 @@ describe("Create User", () => {
           password: user.password
         })
 
-        await createUserUseCase.execute({
+        const response = await createUserUseCase.execute({
           name: user.name,
           email: user.email,
           password: user.password
         })
-
+        expect(response).toBe(201);
     }).rejects.toBeInstanceOf(CreateUserError)
   })
 })
