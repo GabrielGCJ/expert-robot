@@ -16,63 +16,65 @@ let statementRepository: IStatementsRepository;
 
 let getStatementOperationUseCase: GetStatementOperationUseCase;
 
-describe('Get Statement operation', () => {
+describe('Obter extrato', () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository();
     statementRepository = new InMemoryStatementsRepository();
 
-    getStatementOperationUseCase = new GetStatementOperationUseCase(usersRepository, statementRepository);
+    getStatementOperationUseCase = new GetStatementOperationUseCase(
+      usersRepository,
+      statementRepository
+    );
   });
-  it('Should be able to get a statement operation', async () => {
+
+  it('Deve ser capaz de obter extrato', async () => {
     const user: User = await usersRepository.create({
       name: 'user test',
       email: 'test@example.com',
       password: 'test'
     })
 
-    if (user.id != undefined) {
-      const statement: Statement = await statementRepository.create({
-        user_id: user.id,
-        type: OperationType.DEPOSIT,
-        amount: 1000,
-        description: 'test'
-      });
-      if (statement.id != undefined) {
-        const operationStatement = await getStatementOperationUseCase.execute({
-          user_id: user.id,
-          statement_id: statement.id,
-        })
-        expect(operationStatement).toBe(statement)
-      }
-    }
+    const statement: Statement = await statementRepository.create({
+      user_id: user.id as string,
+      type: OperationType.DEPOSIT,
+      amount: 1000,
+      description: 'test'
+    });
 
+    const operationStatement = await getStatementOperationUseCase.execute({
+      user_id: user.id as string,
+      statement_id: statement.id as string,
+    })
 
+    expect(operationStatement).toBe(statement)
   })
-  it('Should not be able to get a statement operation with non existent statement', async () => {
+
+
+  it('Não deve ser possível obter uma operação de instrução com extrato inexistente', async () => {
     const statement: Statement = await statementRepository.create({
       user_id: 'no user',
       type: OperationType.DEPOSIT,
       amount: 1,
       description: 'test operation statement'
     })
-    if (statement.id != undefined) {
-      await expect(getStatementOperationUseCase.execute({
-        user_id: 'no-user',
-        statement_id: statement.id
-      })).rejects.toBeInstanceOf(GetStatementOperationError.UserNotFound)
-    }
+
+    await expect(getStatementOperationUseCase.execute({
+      user_id: 'no-user',
+      statement_id: statement.id as string
+    })).rejects.toBeInstanceOf(GetStatementOperationError.UserNotFound)
   })
-  it('should not be able to get a statement operation without a statement id', async () => {
+
+
+  it('não deve ser capaz de obter uma operação de instrução sem um id do extrato', async () => {
     const user: User = await usersRepository.create({
       name: 'user test',
       email: 'test@example.com',
       password: 'password'
     })
-    if (user.id != undefined) {
-      expect(getStatementOperationUseCase.execute({
-        user_id: user.id,
-        statement_id: 'not valid'
-      })).rejects.toBeInstanceOf(GetStatementOperationError.StatementNotFound)
-    }
+
+    expect(getStatementOperationUseCase.execute({
+      user_id: user.id as string,
+      statement_id: 'not valid'
+    })).rejects.toBeInstanceOf(GetStatementOperationError.StatementNotFound)
   })
 })

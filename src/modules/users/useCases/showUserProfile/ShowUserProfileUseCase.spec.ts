@@ -1,4 +1,3 @@
-import { IUsersRepository } from '../../repositories/IUsersRepository';
 import { InMemoryUsersRepository } from '../../repositories/in-memory/InMemoryUsersRepository';
 
 import { ShowUserProfileUseCase } from "./ShowUserProfileUseCase";
@@ -6,33 +5,33 @@ import { User } from "../../entities/User";
 import { ShowUserProfileError } from "./ShowUserProfileError";
 
 let showUserProfileUseCase: ShowUserProfileUseCase;
-let usersRepository: IUsersRepository;
+let inMemoryUsersRepository: InMemoryUsersRepository;
 
-describe('Show Profile User', () => {
+describe('Mostrar perfil de usuário', () => {
+
   beforeEach(() => {
-    usersRepository = new InMemoryUsersRepository();
-    showUserProfileUseCase = new ShowUserProfileUseCase(usersRepository);
+    inMemoryUsersRepository = new InMemoryUsersRepository();
+    showUserProfileUseCase = new ShowUserProfileUseCase(inMemoryUsersRepository);
   });
 
-  it('should be able to show user profile', async () => {
-    const user = await usersRepository.create({
+  it('Deve ser capaz de mostrar o perfil do usuário', async () => {
+    const user = await inMemoryUsersRepository.create({
       name: 'John do',
       email: 'john@do.com',
       password: '123123'
     });
 
-    if (user.id != undefined) {
-      const userProfile = await showUserProfileUseCase.execute(user.id)
+    const userProfile = await showUserProfileUseCase.execute(user.id as string)
 
-      expect(userProfile).toBeInstanceOf(User);
-      expect(userProfile).toEqual(expect.objectContaining({
-        name: user.name,
-        email: user.email,
-      }));
-    };
+    expect(userProfile).toBeInstanceOf(User);
+    expect(userProfile).toEqual(expect.objectContaining({
+      name: user.name,
+      email: user.email,
+    }));
+
   });
 
-  it('should not be able to show user profile non existing user', async () => {
+  it('Não deve ser capaz de mostrar o perfil de usuário não existente', async () => {
     await expect(showUserProfileUseCase.execute('non-existing-user'))
       .rejects.toBeInstanceOf(ShowUserProfileError);
   });

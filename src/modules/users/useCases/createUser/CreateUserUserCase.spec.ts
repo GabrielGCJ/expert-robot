@@ -6,7 +6,7 @@ import { AppError } from '../../../../shared/errors/AppError';
 let createUserUseCase: CreateUserUseCase;
 let inMemoryUsersRepository: InMemoryUsersRepository;
 
-describe("Create user test", () => {
+describe("Criar usuário", () => {
 
 
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe("Create user test", () => {
     createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository)
   })
 
-  it("Should be able to create a new user", async () => {
+  it("Deve ser capaz de criar um novo usuário", async () => {
     let newUser = {
       name: 'test sample',
       email: 'test@example.com',
@@ -30,7 +30,7 @@ describe("Create user test", () => {
     expect(userCreated).toHaveProperty('id');
   })
 
-  it("Should not be able to create a new user with an existing email", async () => {
+  it("Não deve ser possível criar um novo usuário com um e-mail existente", async () => {
     expect(async () => {
       let newUser = {
         name: 'test sample',
