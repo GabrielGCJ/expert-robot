@@ -1,5 +1,3 @@
-# rocketseat-chapter-IV-desafioTestesUnitarios
-
 # Desafio Testes Unitarios: Chapter IV
 Este é o primeiro chapter no desafio 01 da Rocket Ignite, um programa de capacitação intensiva em desenvolvimento de software.
 
