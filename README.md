@@ -58,15 +58,14 @@ http://localhost:3333
 ---
 A API implementada durante este chapter possui os seguintes endpoints:
 
-![image](https://user-images.githubusercontent.com/91347602/233130037-144c6352-b522-4e07-8566-c2f9f7c8e6ba.png)
 
-Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente.
 
 ---
 
 ## Rotas da aplicação
 
-Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
+#### Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente.
+#### Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
 
 ### POST `/api/v1/users`
 
@@ -78,7 +77,6 @@ A rota recebe `email` e `password` no corpo da requisição e retorna os dados d
 
 <aside>
 💡 Essa aplicação não possui refresh token, ou seja, o token criado dura apenas 1 dia e deve ser recriado após o período mencionado.
-
 </aside>
 
 ### GET `/api/v1/profile`
