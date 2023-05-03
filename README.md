@@ -20,8 +20,12 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 Tudo isso para cada usuário em específico (o `username` será passado pelo header)
 
 ---
+## Observação: Esta API foi desenvolvida para poder ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container.
 
-### Para rodar o projeto:
+
+---
+
+### Para rodar o projeto fora de um container Docker:
 
 Clone este repositório em sua máquina:
 
@@ -40,6 +44,31 @@ Instale o projeto:
 Rode o projeto:
 
 `yarn dev`
+
+Acesse o endereço localhost porta 3333 em seu navegador ou ferramenta de testes para interagir com a API:
+
+http://localhost:3333
+
+---
+
+### Para rodar o projeto em um container Docker:
+
+Clone este repositório em sua máquina:
+
+`git clone https://github.com/GabrielGCJ/rocketseat-chapter-IV-desafioTestesUnitarios
+.git`
+
+Entre na pasta do projeto:
+
+`cd rocketseat-chapter-IV-desafioTestesUnitarios`
+
+Crie uma imagem e suba para o docker:
+
+`docker build -t desafioTestesUnitarios .`
+
+Rode a imagem que subiu para o Docker:
+
+`docker run -p 3333:3333 desafioTestesUnitarios`
 
 Acesse o endereço localhost porta 3333 em seu navegador ou ferramenta de testes para interagir com a API:
 
