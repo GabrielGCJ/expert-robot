@@ -1,11 +1,12 @@
 # Desafio Testes Unitarios: Chapter IV
 
 Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capacitação intensiva em desenvolvimento de software.
+
 ![image](https://user-images.githubusercontent.com/91347602/232902040-1eb12147-f163-4dd8-bf03-0d2cd96cefb7.png)
 
 ### Objetivos:
 
-#### Nesse desafio, o objetivo foi criar uma aplicação para treinamento de conceitos de Node.js! A aplicação tem por finalidade gerenciar tarefas (em inglês *todos*)
+#### Nesse desafio, o objetivo é criar testes unitários para uma aplicação já pronta usando os conceitos ensinados nas aulas.
 
 ### Deve ser possivel:
 
@@ -24,11 +25,13 @@ Tudo isso para cada usuário em específico (o `username` será passado pelo hea
 
 Clone este repositório em sua máquina:
 
-`git clone https://github.com/GabrielGCJ/desafio-1-rocketseat.git`
+`git clone https://github.com/GabrielGCJ/rocketseat-chapter-IV-desafioTestesUnitarios
+.git`
 
 Entre na pasta do projeto:
 
-`cd desafio-1-rocketseat`
+`cd rocketseat-chapter-IV-desafioTestesUnitarios
+`
 
 Instale o projeto:
 
@@ -61,24 +64,42 @@ Cada endpont é representado deve enviar um conjunto de parametros para funciona
 
 ---
 
-######  1 - POST - Cadastro de usuario:
-http://localhost:3333/users
+## Rotas da aplicação
 
-######  2 - GET - Todas as tarefas:
-http://localhost:3333/todos
+Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
 
-######  3 - POST - Adicionar tarefa:
-http://localhost:3333/todos
+### POST `/api/v1/users`
 
-######  4 - PUT - Editar tarefa:
-http://localhost:3333/todos/ (ID DA TAREFA)
+A rota recebe `name`, `email` e `password` dentro do corpo da requisição, salva o usuário criado no banco e retorna uma resposta vazia com status `201`. 
 
-######  5 - PATCH - Alterar tarefa como feita:
-http://localhost:3333/todos/ (ID DA TAREFA)
+### POST `/api/v1/sessions`
 
-######  6 - DELETE - Deletar tafera:
-http://localhost:3333/todos/ (ID DA TAREFA)
+A rota recebe `email` e `password` no corpo da requisição e retorna os dados do usuário autenticado junto à um token JWT. 
 
+<aside>
+💡 Essa aplicação não possui refresh token, ou seja, o token criado dura apenas 1 dia e deve ser recriado após o período mencionado.
+
+</aside>
+
+### GET `/api/v1/profile`
+
+A rota recebe um token JWT pelo header da requisição e retorna as informações do usuário autenticado.
+
+### GET `/api/v1/statements/balance`
+
+A rota recebe um token JWT pelo header da requisição e retorna uma lista com todas as operações de depósito e saque do usuário autenticado e também o saldo total numa propriedade `balance`.
+
+### POST `/api/v1/statements/deposit`
+
+A rota recebe um token JWT pelo header e `amount` e `description` no corpo da requisição, registra a operação de depósito do valor e retorna as informações do depósito criado com status `201`.
+
+### POST `/api/v1/statements/withdraw`
+
+A rota recebe um token JWT pelo header e `amount` e `description` no corpo da requisição, registra a operação de saque do valor (caso o usuário possua saldo válido) e retorna as informações do saque criado com status `201`. 
+
+### GET `/api/v1/statements/:statement_id`
+
+A rota recebe um token JWT pelo header e o id de uma operação registrada (saque ou depósito) na URL da rota e retorna as informações da operação encontrada.
 
 
 
