@@ -10,17 +10,12 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 
 ### Deve ser possivel:
 
-- Criação de um usuário com `name` e `username`.
-- Criar um novo *todo*;
-- Listar todos os *todos*;
-- Alterar o `title` e `deadline` de um *todo* existente;
-- Marcar um *todo* como feito;
-- Excluir um *todo*;
+
 
 Tudo isso para cada usuário em específico (o `username` será passado pelo header)
 
 ---
-## Observação: Esta API foi desenvolvida para poder ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container.
+### Observação: Esta API foi desenvolvida para poder ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container.
 
 
 ---
