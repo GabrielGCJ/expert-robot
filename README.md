@@ -6,13 +6,13 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 
 ### Objetivos:
 
-#### Nesse desafio, o objetivo é criar testes unitários para uma aplicação já pronta usando os conceitos ensinados nas aulas.
+#### Nesse desafio, o objetivo é criar testes unitários para uma aplicação usando os conceitos ensinados nas aulas.
 
 ### A aplicação deve ter as seguintes capacidades:
 
 - Instalação fácil e sem complicações.
 
-- Testes que possam ser executados para garantir a funcionalidade adequada da aplicação.
+- Testes unitarios que possam ser executados para garantir a funcionalidade adequada da aplicação.
 
 - Possibilidade de criar uma imagem do banco de dados para facilitar a replicação e a migração para diferentes ambientes.
 
@@ -22,7 +22,8 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 
 ---
 
-#### Observação: Esta API foi desenvolvida para ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container. Caso não tenha ele instalado em sua maquina:
+#### Observação: 
+##### Esta API foi desenvolvida para ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container. Caso não tenha ele instalado em sua maquina:
 
 ![image](https://user-images.githubusercontent.com/91347602/236373804-f4ab7ad5-e103-4109-9bbe-611d37949dbf.png)
 
