@@ -115,7 +115,7 @@ A rota recebe um token JWT pelo header e o id de uma operação registrada (saqu
 
 ---
 
-### Para testar as utilidades da API é importante o uso de uma aplicação de API Client como Postman ou Insomnia.
+### Para testar as funcionalidades da API e realizar requisições com sucesso, é recomendável o uso de uma aplicação de Cliente de API, como o Postman ou Insomnia.
 
 ![image](https://user-images.githubusercontent.com/91347602/232907354-81bfa735-8b77-45b0-a624-9964122a11bc.png)
 
@@ -123,7 +123,13 @@ A rota recebe um token JWT pelo header e o id de uma operação registrada (saqu
 
 ### https://insomnia.rest/download
 
+### Para melhorar a visualização e o gerenciamento do banco de dados, é recomendado o uso do Beekeeper como aplicativo de gerenciamento de banco de dados.
 
+![image](https://user-images.githubusercontent.com/91347602/236375566-de63d8af-1a10-4b52-aeba-30ea183f6e3e.png)
+
+https://www.beekeeperstudio.io/get
+
+----
 
 # Desafio_Testes_de_Integracao
 
