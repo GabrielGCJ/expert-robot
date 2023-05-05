@@ -108,8 +108,8 @@ A rota recebe um token JWT pelo header e `amount` e `description` no corpo da re
 A rota recebe um token JWT pelo header e o id de uma operação registrada (saque ou depósito) na URL da rota e retorna as informações da operação encontrada.
 
 ------
-
----
+------
+------
 
 ### Para testar as funcionalidades da API e realizar requisições com sucesso, é recomendável o uso de uma aplicação de Cliente de API, como o Postman ou Insomnia.
 
