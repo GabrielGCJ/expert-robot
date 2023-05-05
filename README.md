@@ -4,11 +4,11 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 
 ![image](https://user-images.githubusercontent.com/91347602/232902040-1eb12147-f163-4dd8-bf03-0d2cd96cefb7.png)
 
-### Objetivos:
+### Objetivos :
 
 #### Nesse desafio, o objetivo é criar testes unitários para uma aplicação usando os conceitos ensinados nas aulas.
 
-### A aplicação deve ter as seguintes capacidades:
+### A aplicação deve ter as seguintes capacidades :
 
 - Instalação fácil e sem complicações.
 
