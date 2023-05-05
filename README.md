@@ -123,18 +123,4 @@ A rota recebe um token JWT pelo header e o id de uma operação registrada (saqu
 
 ![image](https://user-images.githubusercontent.com/91347602/236375566-de63d8af-1a10-4b52-aeba-30ea183f6e3e.png)
 
-https://www.beekeeperstudio.io/get
-
-----
-
-# Desafio_Testes_de_Integracao
-
-1- yarn
-
-2- docker build -t nome_do_projeto .
-
-3- docker-compose up
-
-4- yarn typeorm migration:run
-
-5- yarn test
+### https://www.beekeeperstudio.io/get
