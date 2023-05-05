@@ -8,83 +8,63 @@ Este é o primeiro desafio do chapter IV da Rocket Ignite, um programa de capaci
 
 #### Nesse desafio, o objetivo é criar testes unitários para uma aplicação já pronta usando os conceitos ensinados nas aulas.
 
-### Deve ser possivel:
+### A aplicação deve ter as seguintes capacidades:
 
+- Instalação fácil e sem complicações.
 
+- Testes que possam ser executados para garantir a funcionalidade adequada da aplicação.
 
-Tudo isso para cada usuário em específico (o `username` será passado pelo header)
+- Possibilidade de criar uma imagem do banco de dados para facilitar a replicação e a migração para diferentes ambientes.
+
+- Migrations que possam ser executados para garantir que o esquema do banco de dados esteja atualizado.
+
+- Ser gerenciada facilmente por meio de uma aplicação de gerenciamento de banco de dados, como o Beekeeper.
 
 ---
-### Observação: Esta API foi desenvolvida para poder ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container.
 
+#### Observação: Esta API foi desenvolvida para ser utilizada dentro de um container Docker. Para testar suas funções corretamente dentro de um container, é necessário instalar o aplicativo e configurá-lo adequadamente para utilização dentro de um container. Caso não tenha ele instalado em sua maquina:
+
+![image](https://user-images.githubusercontent.com/91347602/236373804-f4ab7ad5-e103-4109-9bbe-611d37949dbf.png)
+
+
+https://www.docker.com/
 
 ---
 
-### Para rodar o projeto fora de um container Docker:
+### Para executar o projeto:
 
 Clone este repositório em sua máquina:
 
-`git clone https://github.com/GabrielGCJ/rocketseat-chapter-IV-desafioTestesUnitarios
-.git`
-
-Entre na pasta do projeto:
-
-`cd rocketseat-chapter-IV-desafioTestesUnitarios
-`
-
-Instale o projeto:
-
-`yarn install`
-
-Rode o projeto:
-
-`yarn dev`
-
-Acesse o endereço localhost porta 3333 em seu navegador ou ferramenta de testes para interagir com a API:
-
-http://localhost:3333
-
----
-
-### Para rodar o projeto em um container Docker:
-
-Clone este repositório em sua máquina:
-
-`git clone https://github.com/GabrielGCJ/rocketseat-chapter-IV-desafioTestesUnitarios
-.git`
+`git clone https://github.com/GabrielGCJ/rocketseat-chapter-IV-desafioTestesUnitarios.git`
 
 Entre na pasta do projeto:
 
 `cd rocketseat-chapter-IV-desafioTestesUnitarios`
 
-Crie uma imagem e suba para o docker:
+Instale o projeto:
 
-`docker build -t desafioTestesUnitarios .`
+`yarn install`
 
-Rode a imagem que subiu para o Docker:
+Iniciar Testes:
 
-`docker run -p 3333:3333 desafioTestesUnitarios`
+`yarn test`
 
-Acesse o endereço localhost porta 3333 em seu navegador ou ferramenta de testes para interagir com a API:
+Crie uma imagem e faça o upload para o Docker utilizando os parâmetros especificados no arquivo docker-compose.yml:
 
-http://localhost:3333
+`docker-compose up -d`
+
+Execute as migrações no banco de dados:
+
+`yarn typeorm migration:run`
 
 ---
 
-### Para testar as utilidades da API é importante o uso de uma aplicação de API Client como Postman ou Insomnia.
-
-![image](https://user-images.githubusercontent.com/91347602/232907354-81bfa735-8b77-45b0-a624-9964122a11bc.png)
-
-### https://www.postman.com/downloads/
-
-### https://insomnia.rest/download
+#### Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente.
+#### Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
 
 ---
 
 ## Rotas da aplicação:
-
-#### Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente.
-#### Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
 
 ------
 
@@ -133,6 +113,16 @@ A rota recebe um token JWT pelo header e `amount` e `description` no corpo da re
 A rota recebe um token JWT pelo header e o id de uma operação registrada (saque ou depósito) na URL da rota e retorna as informações da operação encontrada.
 
 ------
+
+---
+
+### Para testar as utilidades da API é importante o uso de uma aplicação de API Client como Postman ou Insomnia.
+
+![image](https://user-images.githubusercontent.com/91347602/232907354-81bfa735-8b77-45b0-a624-9964122a11bc.png)
+
+### https://www.postman.com/downloads/
+
+### https://insomnia.rest/download
 
 
 
