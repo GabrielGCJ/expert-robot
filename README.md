@@ -60,13 +60,8 @@ Execute as migrações no banco de dados:
 
 ---
 
-
-
----
-
 ## Rotas da aplicação:
-###### Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente.
-###### Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
+###### Cada endpont é representado deve enviar um conjunto de parametros para funcionar corretamente. Para te ajudar a entender melhor o funcionamento da aplicação como um todo, abaixo você verá uma descrição de cada rota e quais parâmetros recebe.
 
 ### POST `/api/v1/users`
 
